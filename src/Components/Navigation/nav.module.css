@@ -1,0 +1,28 @@
+header {
+  background-color: #000;
+}
+.mainNav {
+  font-size: inherit;
+  text-align: center;
+  padding-top: 10px;
+  list-style: none;
+}
+.mainNav p {
+  float: left;
+}
+.mainNav li {
+  font-size: inherit;
+  display: inline-block;
+  margin-left: 30px;
+  color: #000;
+}
+.link {
+  text-decoration: none;
+  color: #000;
+}
+@media only screen and (max-width: 1000px) {
+  .mainNav li {
+    font-size: 70%;
+    margin-left: 20px;
+  }
+}
