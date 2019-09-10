@@ -2,6 +2,7 @@ const initialState = {
   camps: null
 };
 
-export default (state = initialState, action) => {
+const reducer = (state = initialState, action) => {
   return state;
 };
+export default reducer;

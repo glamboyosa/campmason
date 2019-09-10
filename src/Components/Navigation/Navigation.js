@@ -6,16 +6,6 @@ const Navigation = () => (
     <ul className={classes.mainNav}>
       <p>Camp Mason</p>
       <li>
-        <Link className={classes.link} to="/">
-          Home
-        </Link>
-      </li>
-      <li>
-        <Link className={classes.link} to="/about">
-          About
-        </Link>
-      </li>
-      <li>
         <Link className={classes.link} to="/auth">
           Sign In
         </Link>
@@ -23,6 +13,17 @@ const Navigation = () => (
       <li>
         <Link className={classes.link} to="/events">
           Activites
+        </Link>
+      </li>
+
+      <li>
+        <Link className={classes.link} to="/about">
+          About
+        </Link>
+      </li>
+      <li>
+        <Link className={classes.link} to="/">
+          Home
         </Link>
       </li>
     </ul>

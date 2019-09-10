@@ -1,0 +1,1 @@
+export { homeInit } from './home';

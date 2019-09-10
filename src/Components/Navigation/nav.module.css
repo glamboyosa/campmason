@@ -14,11 +14,19 @@ header {
   font-size: inherit;
   display: inline-block;
   margin-left: 30px;
-  color: #000;
+  color: #fff;
+  float: right;
+}
+.mainNav li:after {
+  content: ' ';
+  display: block;
+  height: 2px;
+  width: auto;
+  background-color: #e25822;
 }
 .link {
   text-decoration: none;
-  color: #000;
+  color: #fff;
 }
 @media only screen and (max-width: 1000px) {
   .mainNav li {
