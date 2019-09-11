@@ -1,12 +1,12 @@
 import React from 'react';
 import classes from './section2.module.css';
-const section2 = props => (
+const section2 = () => (
   <div className={classes.section}>
     <div>
       <h3>Camp in the moonlight</h3>
       <p>
-        enjoy scenic night life far from the hustle and bustle of the city{' '}
-        <br />. Camp fires, smores, fires. <br />
+        Enjoy scenic night life far from the hustle and bustle of the city{' '}
+        <br />. Camp fires, smores, marshmellows 🤤 <br />
         Regale tales of your childhood,
         <br /> bond, relax, breathe!
       </p>

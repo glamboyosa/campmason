@@ -22,8 +22,13 @@ export const homeFailed = error => {
 export const homeInit = () => {
   return dispatch => {
     dispatch(homeStart());
-    axios.get('/camps').then(resp => {
-      console.log(resp);
-    });
+
+    axios
+      .get('/camps')
+      .then(resp => {
+        console.log(resp);
+        dispatch(homeSuccess(resp.data));
+      })
+      .catch(error => dispatch(homeFailed(error)));
   };
 };

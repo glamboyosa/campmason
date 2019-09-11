@@ -2,19 +2,22 @@
   margin-top: 20px;
   display: flex;
   justify-content: space-evenly;
+  flex-direction: row-reverse;
   text-align: center;
   align-items: center;
   color: #000;
+  background-color: rgb(255, 248, 248);
 }
 h3 {
   font-size: 170%;
+  text-transform: uppercase;
 }
 p {
   font-size: 150%;
   margin-bottom: 20px;
 }
 img {
-  width: 70%;
+  width: 60%;
   height: auto;
 }
 
@@ -32,6 +35,6 @@ img {
     margin-bottom: 20px;
   }
   img {
-    width: 60%;
+    width: 50%;
   }
 }

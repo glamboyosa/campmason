@@ -1,30 +1,30 @@
 import * as actionTypes from '../actions/actionTypes';
 const initialState = {
-  camps: null,
-  error: null,
-  loading: false
+  events: null,
+  loading: false,
+  error: null
 };
-
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.HOME_START:
+    case actionTypes.EVENTS_START:
       return {
         ...state,
         loading: true
       };
-    case actionTypes.HOME_SUCCESS:
-      console.log(action.data);
+
+    case actionTypes.EVENTS_SUCCESS:
       return {
         ...state,
-        camps: action.data,
-        loading: false
+        loading: false,
+        events: action.data
       };
-    case actionTypes.HOME_FAILED:
+    case actionTypes.EVENTS_FAILED:
       return {
         ...state,
-        error: action.error,
-        loading: false
+        loading: false,
+        error: action.error
       };
+
     default:
       return state;
   }

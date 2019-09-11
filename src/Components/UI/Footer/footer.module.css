@@ -5,10 +5,10 @@
 .span {
   text-align: center;
   margin-top: 20px;
-  font-size: 70%;
+  font-size: 80%;
 }
 @media only screen and (max-width: 1000px) {
   .span {
-    font-size: 50%;
+    font-size: 70%;
   }
 }
