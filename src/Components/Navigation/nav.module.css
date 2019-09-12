@@ -4,7 +4,7 @@ header {
 .mainNav {
   font-size: inherit;
   text-align: center;
-  padding-top: 10px;
+
   list-style: none;
 }
 .mainNav p {
@@ -16,6 +16,10 @@ header {
   margin-left: 30px;
   color: #000;
   float: right;
+}
+.home {
+  color: #fff;
+  text-decoration: none;
 }
 .mainNav li:after {
   content: ' ';

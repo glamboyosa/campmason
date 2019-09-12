@@ -4,7 +4,7 @@ import Aux from '../../hoc/hoc';
 import Footer from '../UI/Footer/footer';
 const layout = props => (
   <Aux>
-    <Navigation />
+    <Navigation home={props.passonprops} />
     <main>{props.children}</main>
     <Footer />
   </Aux>

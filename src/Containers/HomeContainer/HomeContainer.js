@@ -26,6 +26,7 @@ class Home extends Component {
             {this.props.camps.map(el => {
               return (
                 <Header
+                  key={el._id}
                   begin={el.startDate}
                   end={el.endDate}
                   clicked={this.onHeaderClickHandler}
