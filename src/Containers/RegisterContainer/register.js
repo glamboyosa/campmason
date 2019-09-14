@@ -20,6 +20,7 @@ class Register extends Component {
     console.log('submitted');
     const newPhoneNumber = this.state.phone.substring(1);
     console.log(newPhoneNumber);
+    console.log(this.state.country);
     const phone = this.state.country + newPhoneNumber;
     console.log(phone);
     const data = {
@@ -62,19 +63,14 @@ class Register extends Component {
                   placeholder="Phone Number"
                   onChange={e => this.setState({ phone: e.target.value })}
                 />
-                <select>
+                <select
+                  onChange={e => {
+                    this.setState({ country: e.target.value });
+                  }}
+                >
                   <option selected>Select Your Country</option>
                   {this.props.phone.map(el => {
-                    return (
-                      <option
-                        value={el.phone}
-                        onChange={e =>
-                          this.setState({ country: e.target.value })
-                        }
-                      >
-                        {el.name}
-                      </option>
-                    );
+                    return <option value={el.phone}>{el.name}</option>;
                   })}
                 </select>
               </div>
