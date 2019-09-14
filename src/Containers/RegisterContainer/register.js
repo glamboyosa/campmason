@@ -25,9 +25,10 @@ class Register extends Component {
     const data = {
       firstName: this.state.firstname,
       lastName: this.state.lastname,
-      email: this.state.lastname,
+      email: this.state.email,
       phone: phone
     };
+    console.log(data);
     this.props.onFormSubmitted(data);
   };
 
