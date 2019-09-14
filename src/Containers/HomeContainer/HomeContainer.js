@@ -4,6 +4,7 @@ import * as actions from '../../Store/actions/index';
 import Modal from '../../Components/UI/Modal/modal';
 import Spinner from '../../Components/UI/Spinner/Spinner';
 import Hoc from '../../hoc/hoc';
+import { withRouter } from 'react-router-dom';
 import Header from '../../Components/HomeComponent/Header/header';
 import FirstSection from '../../Components/HomeComponent/Section1/section1';
 import SecondSection from '../../Components/HomeComponent/Section2/section2';
@@ -65,4 +66,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Home);
+)(withRouter(Home));

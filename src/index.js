@@ -6,13 +6,15 @@ import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import campReducer from './Store/reducer/campReducer';
 import eventsReducer from './Store/reducer/eventsReducer';
+import registerReducer from './Store/reducer/registerReducer';
 import { createStore, compose, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import axios from 'axios';
 axios.defaults.baseURL = 'https://node-camps.herokuapp.com/api';
 const rootReducer = combineReducers({
   camp: campReducer,
-  event: eventsReducer
+  event: eventsReducer,
+  register: registerReducer
 });
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(

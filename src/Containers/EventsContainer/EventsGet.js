@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Section from '../../Components/EventsComponent/MainSectionGet/section';
 import { connect } from 'react-redux';
 import * as action from '../../Store/actions/index';
+import { withRouter } from 'react-router-dom';
 import Spinner from '../../Components/UI/Spinner/Spinner';
 import Modal from '../../Components/UI/Modal/modal';
 class Events extends Component {
@@ -49,4 +50,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Events);
+)(withRouter(Events));
