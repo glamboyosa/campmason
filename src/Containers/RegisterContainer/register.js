@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as actions from '../../Store/actions/index';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import classes from './register.module.css';
 import Spinner from '../../Components/UI/Spinner/Spinner';
 import Modal from '../../Components/UI/Modal/modal';
@@ -31,6 +32,7 @@ class Register extends Component {
     };
     console.log(data);
     this.props.onFormSubmitted(data);
+    this.props.history.push('/thankyou');
   };
 
   render() {
@@ -110,4 +112,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Register);
+)(withRouter(Register));

@@ -4,12 +4,17 @@ header {
 .mainNav {
   font-size: inherit;
   text-align: center;
-
   list-style: none;
+  padding-top: 0%;
+}
+.authPage {
+  padding-bottom: 10%;
 }
 .mainNav p {
   float: left;
+  color: #e25822;
 }
+
 .mainNav li {
   font-size: inherit;
   display: inline-block;

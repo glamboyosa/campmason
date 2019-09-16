@@ -11,6 +11,7 @@ import SecondSection from '../../Components/HomeComponent/Section2/section2';
 class Home extends Component {
   componentDidMount() {
     this.props.fetchCamps();
+    this.props.remove();
   }
   onHeaderClickHandler = () => {
     this.props.history.push('/register');
@@ -60,7 +61,8 @@ const mapStateToProps = state => {
 };
 const mapDispatchToProps = dispatch => {
   return {
-    fetchCamps: () => dispatch(actions.homeInit())
+    fetchCamps: () => dispatch(actions.homeInit()),
+    remove: () => dispatch(actions.removeStyle())
   };
 };
 export default connect(

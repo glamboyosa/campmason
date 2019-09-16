@@ -8,6 +8,7 @@ import Modal from '../../Components/UI/Modal/modal';
 class Events extends Component {
   componentDidMount() {
     this.props.onGetEvents();
+    this.props.remove();
   }
   onClickHandler = () => {
     this.props.history.push('/register');
@@ -44,7 +45,8 @@ const mapStateToProps = state => {
 };
 const mapDispatchToProps = dispatch => {
   return {
-    onGetEvents: () => dispatch(action.eventsInit())
+    onGetEvents: () => dispatch(action.eventsInit()),
+    remove: () => dispatch(action.removeStyle())
   };
 };
 export default connect(

@@ -1,7 +1,7 @@
 .Modal {
   position: fixed;
   z-index: 400;
-  margin: 28% 0;
+  margin: 10% 10%;
   padding: 20px 30px;
   box-shadow: 2px 3px 3px black;
   height: auto;

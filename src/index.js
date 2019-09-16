@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import campReducer from './Store/reducer/campReducer';
 import eventsReducer from './Store/reducer/eventsReducer';
 import registerReducer from './Store/reducer/registerReducer';
+import authReducer from './Store/reducer/authReducer';
 import { createStore, compose, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import axios from 'axios';
@@ -14,7 +15,8 @@ axios.defaults.baseURL = 'https://node-camps.herokuapp.com/api';
 const rootReducer = combineReducers({
   camp: campReducer,
   event: eventsReducer,
-  register: registerReducer
+  register: registerReducer,
+  auth: authReducer
 });
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(

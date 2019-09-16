@@ -1,0 +1,33 @@
+.div {
+  width: 60%;
+  background-color: #e25822;
+  padding: 10px 30px;
+  margin: 0 auto;
+}
+form {
+  width: 70%;
+  background-color: #fff;
+  padding: 10px 30px;
+}
+form input,
+form select {
+  display: block;
+  margin: 10px 0;
+  padding: 10px 30px;
+  font-family: inherit;
+  box-shadow: 2px 2px 2px #000;
+  width: 70%;
+}
+.btn {
+  padding: 10px 30px;
+  text-align: center;
+  font-family: inherit;
+  background-color: #e25822;
+  border: 1px solid #e25822;
+  margin-top: 20px;
+  font-size: 70%;
+}
+.btn:hover {
+  background-color: #d34912;
+  border: 1px solid #d34912;
+}
