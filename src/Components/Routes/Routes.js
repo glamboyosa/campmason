@@ -27,9 +27,6 @@ const Routes = props => {
       <Route path="/register" exact component={Register} />
       <Route path="/about" exact component={About} />
       <Route path="/login" exact component={signin} />
-      <Route
-        render={() => <p>Oops Please Go back you cannot access this route</p>}
-      />
     </Aux>
   );
   if (props.isAuth) {
