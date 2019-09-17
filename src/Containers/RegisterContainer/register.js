@@ -42,6 +42,7 @@ class Register extends Component {
           <div className={classes.flexContainer}>
             <div>
               <img
+                className={classes.imagesClass}
                 src="https://cdn.dribbble.com/users/727440/screenshots/6244299/camping.gif"
                 alt="camping gif"
               />

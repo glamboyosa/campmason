@@ -15,6 +15,7 @@ const section1 = props => (
     </div>
     <div>
       <img
+        className={classes.img}
         src=" https://images.unsplash.com/photo-1480480565647-1c4385c7c0bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80"
         alt="a woman kayaking"
       />

@@ -13,6 +13,7 @@ const section2 = () => (
     </div>
     <div>
       <img
+        className={classes.image}
         src=" https://images.unsplash.com/photo-1475483768296-6163e08872a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"
         alt="camp at night"
       />

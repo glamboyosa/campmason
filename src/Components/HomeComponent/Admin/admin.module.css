@@ -14,7 +14,8 @@
   background-color: #e25822;
   border: 1px solid #e25822;
   margin-top: 20px;
-
+  text-decoration: none;
+  display: block;
   font-size: 70%;
 }
 
