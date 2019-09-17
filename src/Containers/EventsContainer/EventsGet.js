@@ -20,8 +20,6 @@ class Events extends Component {
         const name = this.props.events.map(el => {
           return `${el.name} by ${el.speaker.fullname}`;
         });
-        console.log(this.props.events);
-        console.log(name);
 
         section = (
           <div>

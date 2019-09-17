@@ -19,7 +19,7 @@ class SignIn extends Component {
       email: this.state.email,
       password: this.state.password
     };
-    console.log(data);
+
     this.props.login(data);
   };
   render() {

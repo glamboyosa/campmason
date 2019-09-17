@@ -24,7 +24,7 @@ class SignUp extends Component {
       password: this.state.password,
       isAdmin: this.state.isAdmin
     };
-    console.log(data);
+
     this.props.login(data, this.props.token);
   };
   render() {

@@ -1,37 +1,32 @@
 import * as actionTypes from '../actions/actionTypes';
 const initialState = {
-  events: null,
+  users: null,
   loading: false,
   error: null,
   isUpdated: false
 };
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.EVENTS_START:
+    case actionTypes.CAMPUSERS_START:
       return {
         ...state,
         loading: true,
         isUpdated: false
       };
-    case actionTypes.EVENTS_POSTSUCCESS:
+    case actionTypes.CAMPUSERS_PUTDELETESUCCESS:
       return {
         ...state,
         loading: false,
         isUpdated: true
       };
-    case actionTypes.EVENTS_PUTDELETESUCCESS:
+    case actionTypes.CAMPUSERS_SUCCESS:
       return {
         ...state,
         loading: false,
-        isUpdated: true
+        users: action.data
       };
-    case actionTypes.EVENTS_SUCCESS:
-      return {
-        ...state,
-        loading: false,
-        events: action.data
-      };
-    case actionTypes.EVENTS_FAILED:
+    case actionTypes.CAMPUSERS_FAILED:
       return {
         ...state,
         loading: false,

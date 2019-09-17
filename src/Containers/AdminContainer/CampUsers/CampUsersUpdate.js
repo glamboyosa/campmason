@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import * as actions from '../../Store/actions/index';
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
-import classes from './register.module.css';
-import Spinner from '../../Components/UI/Spinner/Spinner';
-import Modal from '../../Components/UI/Modal/modal';
-class Register extends Component {
+import * as actions from '../../../Store/actions/index';
+import classes from '../../RegisterContainer/register.module.css';
+import Spinner from '../../../Components/UI/Spinner/Spinner';
+import Modal from '../../../Components/UI/Modal/modal';
+class CampUsersUpdate extends Component {
   state = {
-    firstname: '',
-    lastname: '',
+    firstName: '',
+    lastName: '',
     email: '',
     phone: '',
     country: ''
@@ -16,47 +16,48 @@ class Register extends Component {
   componentDidMount() {
     this.props.fetchPhoneData();
   }
-  formHandler = e => {
+  authHandler = e => {
     e.preventDefault();
-
+    const id = Object.keys(this.props.match.params)
+      .map(el => {
+        return this.props.match.params[el];
+      })
+      .join('');
     const newPhoneNumber = this.state.phone.substring(1);
 
     const phone = this.state.country + newPhoneNumber;
 
     const data = {
-      firstName: this.state.firstname,
-      lastName: this.state.lastname,
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
       email: this.state.email,
       phone: phone
     };
 
-    this.props.onFormSubmitted(data);
-    this.props.history.push('/thankyou');
+    this.props.update(data, id);
   };
-
   render() {
     let form = <Spinner />;
-    if (this.props.phone != null) {
-      if (!this.props.loading) {
+    if (this.props.phone !== null) {
+      if (!this.props.loading || !this.props.phoneLoading) {
         form = (
-          <div className={classes.flexContainer}>
-            <div>
-              <img
-                src="https://cdn.dribbble.com/users/727440/screenshots/6244299/camping.gif"
-                alt="camping gif"
-              />
-            </div>
-            <form onSubmit={this.formHandler}>
-              <h3>Your summer of fun begins now</h3>
+          <div>
+            <form onSubmit={this.authHandler}>
+              <h3>Modify attendee data</h3>
+
               <input
                 type="text"
+                minLength={2}
+                maxLength={256}
                 placeholder="Firstname"
-                onChange={e => this.setState({ firstname: e.target.value })}
+                onChange={e => this.setState({ firstName: e.target.value })}
               />
               <input
                 type="text"
+                minLength={2}
+                maxLength={256}
                 placeholder="Lastname"
-                onChange={e => this.setState({ lastname: e.target.value })}
+                onChange={e => this.setState({ lastName: e.target.value })}
               />
               <div className={classes.formFlexContainer}>
                 <input
@@ -80,9 +81,8 @@ class Register extends Component {
                 placeholder="Email"
                 onChange={e => this.setState({ email: e.target.value })}
               />
-
               <button className={classes.btn} type="submit">
-                Register
+                Submit
               </button>
             </form>
           </div>
@@ -90,25 +90,30 @@ class Register extends Component {
       }
     }
     if (this.props.error) {
-      form = <Modal>Oops...Something went wrong</Modal>;
+      form = <Modal>Oops...Something went wrong.</Modal>;
+    }
+    if (this.props.isUpdated) {
+      form = <Redirect to="/campusers" />;
     }
     return form;
   }
 }
 const mapStateToProps = state => {
   return {
-    loading: state.register.loading,
-    error: state.register.error,
+    phoneLoading: state.register.loading,
+    loading: state.campUser.loading,
+    error: state.campUser.error != null,
+    isUpdated: state.campUser.isUpdated,
     phone: state.register.phone
   };
 };
 const mapDispatchToProps = dispatch => {
   return {
-    fetchPhoneData: () => dispatch(actions.fetchPhone()),
-    onFormSubmitted: data => dispatch(actions.registerInit(data))
+    update: (data, id) => dispatch(actions.campUsersPutInit(data, id)),
+    fetchPhoneData: () => dispatch(actions.fetchPhone())
   };
 };
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(withRouter(Register));
+)(CampUsersUpdate);

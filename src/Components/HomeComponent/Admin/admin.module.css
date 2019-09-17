@@ -1,0 +1,24 @@
+.flex {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding-bottom: 20px;
+}
+.h4 {
+  font-size: 170%;
+}
+.Link {
+  padding: 10px 30px;
+  text-align: center;
+  font-family: inherit;
+  background-color: #e25822;
+  border: 1px solid #e25822;
+  margin-top: 20px;
+
+  font-size: 70%;
+}
+
+.Link:hover {
+  background-color: #d34912;
+  border: 1px solid #d34912;
+}

@@ -1,7 +1,6 @@
 import * as actionTypes from './actionTypes';
 import axios from 'axios';
 export const homeStart = () => {
-  console.log('from homestart action creator');
   return {
     type: actionTypes.HOME_START
   };
@@ -26,7 +25,6 @@ export const homeInit = () => {
     axios
       .get('/camps')
       .then(resp => {
-        console.log(resp);
         dispatch(homeSuccess(resp.data));
       })
       .catch(error => dispatch(homeFailed(error)));

@@ -42,6 +42,25 @@ form select {
   margin-top: 20px;
   font-size: 70%;
 }
+.danger {
+  padding: 10px 30px;
+  text-align: center;
+  font-family: inherit;
+  background-color: red;
+  border: 1px solid red;
+  margin-top: 20px;
+  font-size: 70%;
+  margin-left: 20px;
+}
+.success {
+  padding: 10px 30px;
+  text-align: center;
+  font-family: inherit;
+  background-color: green;
+  border: 1px solid green;
+  margin-top: 20px;
+  font-size: 70%;
+}
 .btn:hover {
   background-color: #d34912;
   border: 1px solid #d34912;

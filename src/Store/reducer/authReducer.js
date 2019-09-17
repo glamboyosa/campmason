@@ -12,12 +12,20 @@ const reducer = (state = intialState, action) => {
     case actiontTypes.REMOVE_STYLE:
       return {
         ...state,
-        authPage: false
+        authPage: false,
+        isSignedUp: false
       };
     case actiontTypes.AUTH_PAGE:
       return {
         ...state,
         authPage: true
+      };
+    case actiontTypes.LOGOUT:
+      return {
+        ...state,
+        isAuth: false,
+        isSignedUp: false,
+        token: null
       };
     case actiontTypes.AUTH_START:
       return {

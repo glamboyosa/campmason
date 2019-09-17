@@ -6,9 +6,9 @@ class Navigation extends Component {
   render() {
     let Class = classes.mainNav;
     if (this.props.auth) {
-      console.log('auth active');
       Class = [classes.mainNav, classes.authPage].join(' ');
     }
+
     return (
       <nav>
         <ul className={Class}>

@@ -22,7 +22,6 @@ export const registerInit = order => {
     axios
       .post('/campusers', order)
       .then(resp => {
-        console.log(resp.data);
         dispatch(registerSuccess());
       })
       .catch(error => dispatch(registerFailed(error)));
@@ -51,20 +50,7 @@ export const fetchPhone = () => {
         }
       })
       .then(resp => {
-        console.log(resp.data);
         dispatch(fetchSuccess(resp.data));
-        const transformedData = resp.data.map(el => [
-          el.name,
-          el.callingCodes.map(el => el).join('')
-        ]);
-        const TransformedData = resp.data.map(el => {
-          return {
-            name: el.name,
-            phone: el.callingCodes.map(el => el).join('')
-          };
-        });
-        console.log(TransformedData);
-        console.log(transformedData);
       })
       .catch(error => {
         console.error(error);

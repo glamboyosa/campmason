@@ -10,7 +10,7 @@ const events = props => (
     </h1>
     <ul>
       {props.eventBy.map(el => (
-        <li>{el}</li>
+        <li key={el}>{el}</li>
       ))}
     </ul>
     <p>What are you waiting for ? </p>

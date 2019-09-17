@@ -8,6 +8,8 @@ import campReducer from './Store/reducer/campReducer';
 import eventsReducer from './Store/reducer/eventsReducer';
 import registerReducer from './Store/reducer/registerReducer';
 import authReducer from './Store/reducer/authReducer';
+import campUserReducer from './Store/reducer/campuser';
+import speakersReducer from './Store/reducer/speakersreducer';
 import { createStore, compose, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import axios from 'axios';
@@ -16,7 +18,9 @@ const rootReducer = combineReducers({
   camp: campReducer,
   event: eventsReducer,
   register: registerReducer,
-  auth: authReducer
+  auth: authReducer,
+  campUser: campUserReducer,
+  speaker: speakersReducer
 });
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(

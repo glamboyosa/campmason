@@ -5,12 +5,19 @@ export const authPage = () => {
     type: actionTypes.AUTH_PAGE
   };
 };
+export const logOut = () => {
+  localStorage.removeItem('token');
+  return {
+    type: actionTypes.LOGOUT
+  };
+};
 export const authStart = () => {
   return {
     type: actionTypes.AUTH_START
   };
 };
 export const authSuccess = token => {
+  localStorage.setItem('token', token);
   return {
     type: actionTypes.AUTH_SUCCESS,
     token
@@ -22,9 +29,21 @@ export const signUpSuccess = () => {
   };
 };
 export const authFailed = error => {
+  localStorage.removeItem('token');
+
   return {
     type: actionTypes.AUTH_FAILED,
     error
+  };
+};
+export const persistUser = () => {
+  return dispatch => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      dispatch(logOut());
+    } else {
+      dispatch(authSuccess(token));
+    }
   };
 };
 export const authInit = authData => {
@@ -33,7 +52,6 @@ export const authInit = authData => {
     axios
       .post('/login', authData)
       .then(resp => {
-        console.log(resp.data);
         dispatch(authSuccess(resp.data));
       })
       .catch(error => {
@@ -52,7 +70,6 @@ export const signUpInit = (signUpData, token) => {
         }
       })
       .then(resp => {
-        console.log(resp.data);
         dispatch(signUpSuccess());
       })
       .catch(error => {

@@ -13,7 +13,6 @@ const reducer = (state = initialState, action) => {
         loading: true
       };
     case actionTypes.HOME_SUCCESS:
-      console.log(action.data);
       return {
         ...state,
         camps: action.data,
