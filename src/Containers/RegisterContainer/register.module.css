@@ -69,7 +69,13 @@ form select {
   img {
     width: 0%;
     height: 0%;
-    visibility: hidden;
+    display: none;
+  }
+  .flexContainer {
+    display: block;
+  }
+  form {
+    margin-left: 5%;
   }
   .formFlexContainer {
     width: 100%;
