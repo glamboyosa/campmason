@@ -67,10 +67,12 @@ form select {
 }
 @media only screen and (max-width: 850px) {
   img {
+    width: 100%;
     height: 100%;
   }
   .formFlexContainer {
     width: 100%;
+    flex-wrap: wrap;
   }
   .formFlexContainer input {
     font-size: 50%;

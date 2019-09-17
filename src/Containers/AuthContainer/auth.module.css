@@ -31,3 +31,11 @@ form select {
   background-color: #d34912;
   border: 1px solid #d34912;
 }
+@media only screen and (max-width: 850px) {
+  .div {
+    width: 80%;
+  }
+  form {
+    width: 90%;
+  }
+}
