@@ -27,6 +27,8 @@ const Routes = props => {
       <Route path="/register" exact component={Register} />
       <Route path="/about" exact component={About} />
       <Route path="/login" exact component={signin} />
+      <Route path="/thankyou" exact component={Registered} />
+      <Route path="/signup" exact component={signUp} />
     </Aux>
   );
   if (props.isAuth) {
